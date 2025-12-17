@@ -1,3 +1,6 @@
 [submodule "external/sam-3d-objects"]
 	path = external/sam-3d-objects
 	url = https://github.com/yunho-c/sam-3d-objects
+[submodule "external/tvm"]
+	path = external/tvm
+	url = https://github.com/yunho-c/tvm
