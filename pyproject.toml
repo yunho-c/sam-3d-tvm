@@ -87,6 +87,8 @@ platforms = ["linux-64", "osx-arm64"]
 
 [tool.pixi.pypi-dependencies]
 sam-3d-tvm = { path = ".", editable = true }
+tvm = { path = "external/tvm/python", editable = true }
+apache-tvm-ffi = { path = "external/tvm/3rdparty/tvm-ffi", editable = true }
 
 [tool.pixi.dependencies]
 python = ">=3.11"
@@ -99,7 +101,6 @@ mypy = "*"
 
 [tool.pixi.tasks]
 build-tvm = "bash scripts/build_tvm.sh"
-install-tvm = { cmd = "pip install -e external/tvm/python", depends-on = ["build-tvm"] }
 test = "pytest tests/"
 test-cov = "pytest --cov=sam_3d_tvm tests/"
 lint = "ruff check ."
