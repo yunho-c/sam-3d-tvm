@@ -98,6 +98,8 @@ pytest-cov = "*"
 mypy = "*"
 
 [tool.pixi.tasks]
+build-tvm = "bash scripts/build_tvm.sh"
+install-tvm = { cmd = "pip install -e external/tvm/python", depends-on = ["build-tvm"] }
 test = "pytest tests/"
 test-cov = "pytest --cov=sam_3d_tvm tests/"
 lint = "ruff check ."
